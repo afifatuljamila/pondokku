@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'PondokKu',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF535763)),
-        scaffoldBackgroundColor: const Color(0xFFEDEDE8),
+        scaffoldBackgroundColor: const Color(0xFFF9FAFB),
         fontFamily: 'Roboto', 
       ),
       home: const LoginScreen(),
@@ -40,17 +40,23 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Watermark — large mosque icon
+          // Background Watermarks
           Positioned(
-            bottom: 30,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Icon(
-                Icons.mosque,
-                size: 220,
-                color: Colors.black.withOpacity(0.04),
-              ),
+            bottom: -30,
+            left: 20,
+            child: Icon(
+              Icons.architecture, // Compass/ruler icon
+              size: 160,
+              color: Colors.black.withOpacity(0.02),
+            ),
+          ),
+          Positioned(
+            bottom: -20,
+            right: -10,
+            child: Icon(
+              Icons.business, // Building icon
+              size: 180,
+              color: Colors.black.withOpacity(0.02),
             ),
           ),
           // Main Form Content
@@ -364,97 +370,60 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const SizedBox(height: 48),
-
-                      // Footer section with watermark
-                      SizedBox(
-                        height: 110,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            // Big watermark text behind
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'AFIFATUL JAMILA',
-                                  style: TextStyle(
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.black.withOpacity(0.07),
-                                    letterSpacing: 1.0,
-                                  ),
-                                ),
-                                Text(
-                                  'NPM: 20241220054',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black.withOpacity(0.07),
-                                  ),
-                                ),
-                              ],
+                      
+                      // Footer
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 30,
+                            height: 1,
+                            color: const Color(0xFFE5E7EB),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            child: Text(
+                              'PERSONALIZED FOR',
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF9CA3AF),
+                                letterSpacing: 1.2,
+                              ),
                             ),
-                            // Foreground content
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 30,
-                                      height: 1,
-                                      color: const Color(0xFFD1D5DB),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 10),
-                                      child: Text(
-                                        'PERSONALIZED FOR',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xFF9CA3AF),
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 30,
-                                      height: 1,
-                                      color: const Color(0xFFD1D5DB),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 6),
-                                const Text(
-                                  'AFIFATUL JAMILA',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w800,
-                                    color: Color(0xFF4B5563),
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                                const SizedBox(height: 2),
-                                const Text(
-                                  'NPM: 20241220054',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF4B5563),
-                                  ),
-                                ),
-                                const SizedBox(height: 12),
-                                const Text(
-                                  '© 2024 PondokKu Management System',
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    color: Color(0xFF9CA3AF),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                          ),
+                          Container(
+                            width: 30,
+                            height: 1,
+                            color: const Color(0xFFE5E7EB),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      const Text(
+                        'AFIFATUL JAMILA',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xFF4B5563),
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      const Text(
+                        'NPM: 20241220054',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF4B5563),
+                        ),
+                      ),
+                      const SizedBox(height: 32),
+                      const Text(
+                        '© 2024 PondokKu Management System',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xFF9CA3AF),
                         ),
                       ),
                       const SizedBox(height: 24),
